@@ -1,6 +1,6 @@
 // Vestigium Service Worker - Network First
 // Cambiá el número de versión cada vez que actualices la app
-const CACHE_NAME = 'vestigium-v2.4';
+const CACHE_NAME = 'vestigium-v2.4.1';
 const URLS_TO_CACHE = ['/'];
 
 // Instalación: guardar en caché
