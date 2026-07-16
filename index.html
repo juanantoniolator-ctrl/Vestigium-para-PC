@@ -541,6 +541,8 @@ body {
   <button class="tab"     onclick="gTab('robo',this)">Robo c/armas</button>
   <button class="tab"     onclick="gTab('propiedad',this)">Del. propiedad</button>
   <button class="tab"     onclick="gTab('busqueda',this)">Búsqueda personas</button>
+  <button class="tab"     onclick="gTab('ciberdelitos',this)">Ciberdelitos</button>
+  <button class="tab"     onclick="gTab('estafas_digitales',this)">Estafas digitales</button>
   <button class="tab"     onclick="gTab('violencia_genero',this)">Violencia de género</button>
 </nav>
 
@@ -1216,6 +1218,87 @@ const D = {
     ]},
   ]},
 
+
+  ciberdelitos: { s: [
+    { n:"Medidas inmediatas — primeros 30 minutos", b:"IRREPRODUCIBLE", bc:"b-rojo", ic:"🚨", it:[
+      {t:"Ordenar preservación de cuenta/perfil del agresor ante la plataforma (Meta, TikTok, Google) con fecha y hora exacta del contacto",u:1},
+      {t:"Documentar URL completa del perfil del agresor con captura de pantalla fechada",u:1},
+      {t:"Ordenar captura de toda la conversación en el dispositivo de la víctima antes de cualquier manipulación",u:1},
+      {t:"Asegurar el dispositivo de la víctima en modo avión para congelar el estado digital",u:1},
+      {t:"Registrar nombre de usuario, ID de perfil, alias y foto de perfil del agresor",u:1},
+      {t:"Identificar la plataforma de comunicación utilizada (app, red social, juego online)",u:1},
+    ]},
+    { n:"Identificación del agresor", b:"URGENTE", bc:"b-rojo", ic:"🔍", it:[
+      {t:"Oficiar al ISP para identificar IP origen del contacto — plazo máximo 72 hs",u:1},
+      {t:"Solicitar a la plataforma registros de IP de inicio de sesión del perfil del agresor",u:1},
+      {t:"Oficiar a empresa telefónica titular de la línea si el contacto fue por WhatsApp/SMS",u:1},
+      {t:"Requerir a RENAPER identificación de personas con los datos disponibles (nombre, foto)",u:1},
+      {t:"Verificar si el número de línea está registrado como prepago o contrato — solicitar datos del titular",u:1},
+      {t:"Cruzar IP con geolocalización aproximada para determinar jurisdicción competente",u:0},
+    ]},
+    { n:"Víctima menor — entrevista y protección", b:"PRIORITARIO", bc:"b-naranja", ic:"👶", it:[
+      {t:"Garantizar que la entrevista sea realizada por personal especializado (Cámara Gesell si disponible)",u:1},
+      {t:"No interrogar al menor directamente sobre el contenido del material — derivar a equipo forense",u:1},
+      {t:"Verificar si existe contacto físico consumado o solo virtual — cambia la tipificación",u:1},
+      {t:"Identificar si hay más víctimas menores en el entorno del agresor (hermanos, compañeros de escuela)",u:0},
+      {t:"Solicitar informe psicosocial urgente si hay riesgo de contacto físico inminente",u:1},
+      {t:"Ordenar restricción de acercamiento si el agresor es persona del entorno de la víctima",u:1},
+    ]},
+    { n:"Cadena de custodia digital", b:"PRIORITARIO", bc:"b-naranja", ic:"💻", it:[
+      {t:"Peritar el dispositivo de la víctima con herramienta forense certificada (Cellebrite / UFED / XRY)",u:1},
+      {t:"Generar hash MD5/SHA-256 de toda evidencia digital antes de cualquier copia",u:1},
+      {t:"Documentar el material con número de imagen forense — no abrir archivos CSAM sin protocolo de cadena de custodia",u:1},
+      {t:"Registrar metadatos EXIF de imágenes y videos para identificar dispositivo de origen",u:1},
+      {t:"Guardar capturas en formato original — no imprimir ni fotografiar pantalla como único respaldo",u:1},
+    ]},
+    { n:"Coordinación institucional", b:"GESTIONAR", bc:"b-azul", ic:"🏛️", it:[
+      {t:"Notificar a División de Ciberdelitos de la Policía del Chaco o fuerza con competencia digital",u:1},
+      {t:"Evaluar notificación a INTERPOL (National Central Bureau) si el agresor es extranjero o el material tiene origen externo",u:0},
+      {t:"Notificar a GROOMING Argentina (grooming.org.ar) para seguimiento y apoyo a la víctima",u:0},
+      {t:"Informar a SENNAF/organismo de protección de la infancia si la víctima requiere medidas de abrigo",u:0},
+      {t:"Verificar si el agresor figura en el Registro Nacional de Datos Genéticos vinculado a delitos contra la integridad sexual",u:0},
+    ]},
+  ]},
+
+  estafas_digitales: { s: [
+    { n:"Medidas inmediatas — primeros 30 minutos", b:"IRREPRODUCIBLE", bc:"b-rojo", ic:"💸", it:[
+      {t:"Requerir al banco de la víctima bloqueo cautelar de la cuenta destino con CBU/CVU identificado",u:1},
+      {t:"Oficiar al banco receptor para congelar los fondos transferidos — incluir número de transacción y fecha/hora exacta",u:1},
+      {t:"Solicitar al banco de la víctima la cadena completa de transacciones del día del hecho",u:1},
+      {t:"Identificar el CBU/CVU/alias destino y la entidad financiera receptora (banco, billetera virtual, fintech)",u:1},
+      {t:"Verificar si la cuenta destino está a nombre de persona física o jurídica — solicitar titularidad al banco",u:1},
+    ]},
+    { n:"Identificación del autor", b:"URGENTE", bc:"b-rojo", ic:"🔍", it:[
+      {t:"Oficiar a la entidad financiera receptora para obtener datos del titular de la cuenta destino",u:1},
+      {t:"Requerir a RENAPER identificación del titular con los datos obtenidos del banco",u:1},
+      {t:"Solicitar IP de login y dispositivo desde el que se realizó la extracción o movimiento de fondos",u:1},
+      {t:"Identificar el número de celular vinculado a la cuenta de billetera virtual (Mercado Pago, Ualá, etc.)",u:1},
+      {t:"Oficiar a empresa telefónica para identificar titular de la línea y IMEI del dispositivo utilizado",u:1},
+      {t:"Verificar si hubo portabilidad numérica reciente (SIM swapping) — solicitarla al operador telefónico",u:1},
+    ]},
+    { n:"Evidencia digital en el dispositivo de la víctima", b:"PRIORITARIO", bc:"b-naranja", ic:"📱", it:[
+      {t:"Preservar SMS, correos y mensajes donde llegó el contacto fraudulento (phishing, ingeniería social)",u:1},
+      {t:"Documentar capturas de pantalla de la comunicación engañosa con fecha y hora visible",u:1},
+      {t:"Identificar el link o dominio falso utilizado — preservar URL completa sin hacer clic en otros dispositivos",u:1},
+      {t:"Peritar el celular de la víctima si instaló alguna app o accedió a un enlace desde el dispositivo",u:1},
+      {t:"Generar hash de la evidencia digital preservada",u:1},
+    ]},
+    { n:"Trazabilidad financiera", b:"PRIORITARIO", bc:"b-naranja", ic:"🏦", it:[
+      {t:"Oficiar al BCRA para identificar el recorrido de los fondos si pasaron por más de una entidad",u:0},
+      {t:"Verificar si la cuenta destino fue reportada previamente ante el BCRA por otras denuncias",u:1},
+      {t:"Evaluar reporte ante la UIF si el monto supera el umbral de sospecha de lavado (Res. UIF vigente)",u:0},
+      {t:"Solicitar a la fintech/billetera virtual el historial de retiros y transferencias posteriores al depósito",u:1},
+      {t:"Identificar si los fondos fueron convertidos a criptomonedas — solicitar datos al exchange si aplica",u:0},
+    ]},
+    { n:"Coordinación y medidas complementarias", b:"GESTIONAR", bc:"b-azul", ic:"🏛️", it:[
+      {t:"Notificar a la División de Ciberdelitos para rastreo técnico de IP y dispositivos",u:1},
+      {t:"Verificar en la plataforma de denuncia del BCRA si hay reportes previos del mismo CBU",u:1},
+      {t:"Informar al denunciante que no limpie ni reinicie su dispositivo hasta finalizada la pericia",u:1},
+      {t:"Evaluar medida cautelar de inhibición general de bienes si el autor fue identificado",u:0},
+      {t:"Verificar si el hecho forma parte de una banda organizada — analizar otras denuncias en el período",u:0},
+    ]},
+  ]},
+
   violencia_genero: { s: [
     { n:"Presunción y primeras acciones", b:"URGENTE", bc:"b-rojo", ic:"🚨", it:[
       {t:"Presumir femicidio desde el inicio, sin esperar confirmación",u:1},
@@ -1358,6 +1441,8 @@ const NOMBRES = {
   robo:      "Robo con Armas",
   propiedad: "Delitos contra la Propiedad",
   busqueda:  "Búsqueda de Personas — SIFEBU",
+  ciberdelitos: "Ciberdelitos contra la Integridad Sexual de Menores",
+  estafas_digitales: "Estafas Digitales",
   violencia_genero: "Violencia de Género — UFEM"
 };
 
